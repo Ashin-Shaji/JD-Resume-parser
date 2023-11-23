@@ -111,6 +111,16 @@ else:
 
     jd_full_text = st.text_area('', height=200)
 
+    # Center buttons
+    st.markdown(
+        """
+        <style>
+        .stButton > button {
+            display: block;
+            margin: 0 auto;
+        }
+        </style>
+        """, unsafe_allow_html=True)
     if st.button("Extract Skills and Experience"):
         jd_full_text, jd_skills, jd_experience = get_jd_skills_and_exp(jd_full_text)
         st.write(f"SKILLS REQUIRED: {jd_skills}")
